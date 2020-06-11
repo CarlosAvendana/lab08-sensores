@@ -2,18 +2,22 @@ package com.example.lab8sensores;
 
 import android.os.Bundle;
 
+import com.example.lab8sensores.adapter.ContactosAdapter;
+import com.example.lab8sensores.data.Contacto;
+import com.example.lab8sensores.helper.RecyclerItemTouchHelper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
 
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ContactosAdapter.ContactoAdapterListener, RecyclerItemTouchHelper.RecyclerItemTouchHelperListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,5 +56,20 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onContactSelected(Contacto carrera) {
+
+    }
+
+    @Override
+    public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction, int position) {
+
+    }
+
+    @Override
+    public void onItemMove(int source, int target) {
+
     }
 }

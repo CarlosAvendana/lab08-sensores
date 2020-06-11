@@ -12,10 +12,18 @@ public class Contenedor {
     private Contenedor(){
         lista= new ArrayList<>();
     }
+    private void addContactos(){
+        instancia.lista.add(new Contacto("Luis Felipe Piedra","+50689807793"));
+        instancia.lista.add(new Contacto("Carlos Obando Avendano", "+50687106583"));
+    }
 
     public static Contenedor getInstance(){
-        if(instancia==null)
+        if(instancia==null){
             instancia= new Contenedor();
+            instancia.addContactos();
+        }
         return instancia;
     }
+
+
 }

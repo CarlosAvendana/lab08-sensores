@@ -13,6 +13,12 @@ public class Contacto {
         this.image = image;
     }
 
+    public Contacto(String nombre, String number) {
+        this.nombre = nombre;
+        this.number = number;
+        this.image=null;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -27,6 +33,14 @@ public class Contacto {
 
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    public Bitmap getImage() {
+        return image;
+    }
+
+    public void setImage(Bitmap image) {
+        this.image = image;
     }
 
     @Override
