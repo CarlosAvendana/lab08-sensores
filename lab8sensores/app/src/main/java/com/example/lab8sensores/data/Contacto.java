@@ -2,7 +2,9 @@ package com.example.lab8sensores.data;
 
 import android.graphics.Bitmap;
 
-public class Contacto {
+import java.io.Serializable;
+
+public class Contacto extends Serializable {
     String nombre;
     String number;
     Bitmap image;

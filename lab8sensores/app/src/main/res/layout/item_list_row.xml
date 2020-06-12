@@ -27,7 +27,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/padd_10"
             android:layout_toRightOf="@id/edit_icon"
-            android:text="@string/edit"
+            android:text="@string/visualizar"
             android:textColor="#fff"
             android:textSize="13dp" />
     </RelativeLayout>

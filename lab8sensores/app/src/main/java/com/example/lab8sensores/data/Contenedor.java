@@ -11,6 +11,7 @@ public class Contenedor {
 
     private Contenedor(){
         lista= new ArrayList<>();
+
     }
     private void addContactos(){
         instancia.lista.add(new Contacto("Luis Felipe Piedra","+50689807793"));
