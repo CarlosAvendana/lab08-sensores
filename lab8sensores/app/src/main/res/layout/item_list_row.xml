@@ -9,7 +9,7 @@
         android:id="@+id/view_background_edit"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/bg_row_background_edit"
+        android:background="@android:color/holo_green_light"
         android:visibility="gone">
 
         <ImageView
@@ -19,7 +19,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/padd_10"
-            android:src="@drawable/ic_edit_white" />
+            android:src="@drawable/ic_edit" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
         android:id="@+id/view_background_delete"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/bg_row_background_delete"
+        android:background="@color/colorPrimaryDark"
         android:visibility="gone">
 
         <ImageView
@@ -73,7 +73,7 @@
             android:ellipsize="end"
             android:fontFamily="sans-serif-medium"
             android:maxLines="1"
-            android:textColor="@color/item_name"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="17dp" />
 
         <TextView
@@ -85,7 +85,7 @@
             android:ellipsize="end"
             android:fontFamily="sans-serif-medium"
             android:maxLines="1"
-            android:textColor="@color/description"
+            android:textColor="@android:color/holo_blue_light"
             android:textSize="17dp" />
 
         <TextView
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/titleFirstLbl"
             android:layout_marginTop="5dp"
-            android:textColor="@color/description"
+            android:textColor="@android:color/holo_green_light"
             android:textSize="12dp" />
 
     </RelativeLayout>

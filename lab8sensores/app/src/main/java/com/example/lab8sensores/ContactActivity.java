@@ -7,6 +7,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -18,12 +19,15 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.lab8sensores.data.Contacto;
+
 public class ContactActivity extends AppCompatActivity {
 
     ImageView photo;
     ImageButton callBtn, smsBtn, cameraBtn, volverBtn,sendBtn;
     EditText phone, name,message;
     private static final int Image_Capture_Code = 1;
+    private boolean editable = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +47,7 @@ public class ContactActivity extends AppCompatActivity {
         phone = (EditText) findViewById(R.id.phoneNumber);
         name = (EditText) findViewById(R.id.nameText);
         message = (EditText) findViewById(R.id.messageContent);
+
 
         cameraBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +91,51 @@ public class ContactActivity extends AppCompatActivity {
             }
         });
 
+        Bundle extras = getIntent().getExtras();
+        if(extras!=null){
+            editable = extras.getBoolean("editable");
+            if (editable){
+                Contacto aux = (Contacto) getIntent().getSerializableExtra("contacto");
+                phone.setText(aux.getNumber());
+                name.setText(aux.getNombre());
+                if(aux.getImage()!=null)
+                    photo.setImageBitmap(aux.getImage());
+
+                volverBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        editContact();
+                    }
+                });
+
+            }else{
+                volverBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        addContact();
+                    }
+                });
+            }
+
+        }
+
+    }
+
+    public void addContact() {
+        Contacto aux= new Contacto(name.getText().toString(),phone.getText().toString());
+        Intent intent = new Intent(getBaseContext(), MainActivity.class);
+            //sending carrera data
+            intent.putExtra("addContact", aux);
+            startActivity(intent);
+            finish(); //prevent go back
+    }
+
+    public void editContact(){
+        Contacto aux= new Contacto(name.getText().toString(),phone.getText().toString());
+        Intent intent = new Intent(getBaseContext(), MainActivity.class);
+        intent.putExtra("editContacto", aux);
+        startActivity(intent);
+        finish(); //prevent go back
     }
 
     @Override

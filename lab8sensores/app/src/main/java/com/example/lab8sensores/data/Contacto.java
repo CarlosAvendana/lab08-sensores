@@ -1,10 +1,12 @@
 package com.example.lab8sensores.data;
 
 import android.graphics.Bitmap;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import java.io.Serializable;
 
-public class Contacto extends Serializable {
+public class Contacto implements Serializable {
     String nombre;
     String number;
     Bitmap image;
@@ -52,4 +54,5 @@ public class Contacto extends Serializable {
                 ", number='" + number + '\'' +
                 '}';
     }
+
 }

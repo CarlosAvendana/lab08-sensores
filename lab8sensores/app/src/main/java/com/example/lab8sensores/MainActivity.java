@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity
             //send data to Edit Activity
             Intent intent = new Intent(this, ContactActivity.class);
             intent.putExtra("editable", true);
-            intent.putExtra("Contacto", aux);
+            intent.putExtra("contacto", aux);
             mAdapter.notifyDataSetChanged(); //restart left swipe view
             startActivity(intent);
         }
@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void sent_To_AddUpdContacto() {
-        Intent intent = new Intent(this, Contacto.class);
+        Intent intent = new Intent(this, ContactActivity.class);
         intent.putExtra("editable", false);
         startActivity(intent);
     }
