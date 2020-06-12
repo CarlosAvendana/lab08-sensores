@@ -11,4 +11,5 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="visualizar">Visualizar</string>
     <string name="delete">Borrar</string>
+    <string name="phrase">Software undergoes beta testing shortly before it’s released. Beta is Latin for “still doesn’t work (Anonymous)</string>
 </resources>
