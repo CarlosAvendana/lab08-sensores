@@ -7,8 +7,36 @@
     android:paddingLeft="10dp"
     android:paddingRight="10dp">
 
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="65dp"
+        android:layout_alignStart="@+id/photo"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="53dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/messageContent"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:visibility="invisible" />
+
+        <ImageButton
+            android:id="@+id/sendBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_send" />
+    </LinearLayout>
+
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/photo"
         android:layout_width="358dp"
         android:layout_height="323dp"
         android:layout_alignParentStart="true"
@@ -20,57 +48,57 @@
         />
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
-        android:layout_alignStart="@+id/imageView"
-        android:layout_marginStart="25dp"
+        android:layout_width="327dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/nameText"
+        android:layout_alignStart="@+id/photo"
+        android:layout_marginStart="18dp"
         android:layout_marginTop="22dp"
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/callBtn"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             app:srcCompat="@drawable/ic_phone" />
 
         <EditText
-            android:id="@+id/editTextPhone"
+            android:id="@+id/phoneNumber"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="phone" />
 
         <ImageButton
-            android:id="@+id/imageButton5"
+            android:id="@+id/smsBtn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             app:srcCompat="@drawable/ic_message" />
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="332dp"
-        android:layout_height="36dp"
-        android:layout_below="@+id/imageView"
-        android:layout_alignStart="@+id/imageView"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="23dp"
+    <EditText
+        android:id="@+id/nameText"
+        android:layout_width="334dp"
+        android:layout_height="55dp"
+        android:layout_below="@+id/photo"
+        android:layout_alignStart="@+id/photo"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="30dp"
         android:text="TextView"
         android:textAlignment="center" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/cameraBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/imageView"
-        android:layout_alignTop="@+id/imageView"
-        android:layout_alignEnd="@+id/imageView"
-        android:layout_alignBottom="@+id/imageView"
+        android:layout_alignStart="@+id/photo"
+        android:layout_alignTop="@+id/photo"
+        android:layout_alignEnd="@+id/photo"
+        android:layout_alignBottom="@+id/photo"
         android:layout_marginStart="155dp"
         android:layout_marginTop="263dp"
         android:layout_marginEnd="154dp"
@@ -79,10 +107,13 @@
         app:srcCompat="@drawable/ic_camera" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/volverBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="12dp"
         app:srcCompat="@drawable/abc_vector_test" />
+
+
+
 </RelativeLayout>
