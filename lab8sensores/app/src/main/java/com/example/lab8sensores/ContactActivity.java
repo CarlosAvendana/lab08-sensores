@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.lab8sensores.data.Contacto;
+import com.example.lab8sensores.data.Contenedor;
 
 public class ContactActivity extends AppCompatActivity {
 
@@ -110,7 +111,8 @@ public class ContactActivity extends AppCompatActivity {
 
     public void addContact() {
         Contacto aux= new Contacto(name.getText().toString(),phone.getText().toString());
-        //Agregar la vara de meterlo en la lista para que salga en Lista de contactos 
+        //Agregar la vara de meterlo en la lista para que salga en Lista de contactos
+        Contenedor.getInstance().lista.add(aux);
         Intent intent = new Intent(getBaseContext(), MainActivity.class);
             //sending carrera data
             intent.putExtra("addContact", aux);
