@@ -24,20 +24,20 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="309dp"
+        android:layout_height="246dp"
         android:layout_gravity="bottom"
-        android:orientation="vertical"
         android:layout_marginLeft="24dp"
-        android:layout_marginRight="24dp">
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="100dp"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:text="@string/phrase"
             android:gravity="center"
-            />
+            android:text="@string/phrase"
+            android:textSize="15dp" />
 
         <VideoView
             android:id="@+id/videoView"
