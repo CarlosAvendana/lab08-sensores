@@ -110,6 +110,7 @@ public class ContactActivity extends AppCompatActivity {
 
     public void addContact() {
         Contacto aux= new Contacto(name.getText().toString(),phone.getText().toString());
+        //Agregar la vara de meterlo en la lista para que salga en Lista de contactos 
         Intent intent = new Intent(getBaseContext(), MainActivity.class);
             //sending carrera data
             intent.putExtra("addContact", aux);

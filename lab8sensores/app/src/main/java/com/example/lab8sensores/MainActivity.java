@@ -3,11 +3,12 @@ package com.example.lab8sensores;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.MediaController;
 import android.widget.SearchView;
 import android.widget.Toast;
@@ -25,8 +26,6 @@ import com.example.lab8sensores.adapter.ContactosAdapter;
 import com.example.lab8sensores.data.Contacto;
 import com.example.lab8sensores.data.Contenedor;
 import com.example.lab8sensores.helper.RecyclerItemTouchHelper;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +39,9 @@ public class MainActivity extends AppCompatActivity
     private List<Contacto> estudianteList;
     private SearchView searchView;
     private Contenedor model;
+
+    private SensorManager mSensorManager;
+    private ShakeEventListener mSensorListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,25 +73,43 @@ public class MainActivity extends AppCompatActivity
         videoView.setMediaController(mediaController);
         mediaController.setAnchorView(videoView);
 
-        //FloatingActionButton fab = findViewById(R.id.fab);
-        /*fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                sent_To_AddUpdContacto();
-            }
-        });*/
-
         ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new RecyclerItemTouchHelper(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT, this);
         new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(mRecyclerView);
 
         checkIntentInformation();
         mAdapter.notifyDataSetChanged();
 
+        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        mSensorListener = new ShakeEventListener();
+
+        mSensorListener.setOnShakeListener(new ShakeEventListener.OnShakeListener() {
+
+            public void onShake() {
+                Toast.makeText(MainActivity.this, "Shake!", Toast.LENGTH_SHORT).show();
+                sent_To_AddUpdContacto();
+            }
+        });
+
+
     }
 
     @Override
     public void onContactSelected(Contacto carrera) {
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mSensorManager.registerListener(mSensorListener,
+                mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+                SensorManager.SENSOR_DELAY_UI);
+    }
+
+    @Override
+    protected void onPause() {
+        mSensorManager.unregisterListener(mSensorListener);
+        super.onPause();
     }
 
     @Override
@@ -200,4 +220,4 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-}
+}// cierre main activity
