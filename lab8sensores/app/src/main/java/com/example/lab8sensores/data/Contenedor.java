@@ -14,8 +14,10 @@ public class Contenedor {
 
     }
     private void addContactos(){
-        instancia.lista.add(new Contacto("Luis Felipe Piedra","+50689807793"));
-        instancia.lista.add(new Contacto("Carlos Obando Avendano", "+50687106583"));
+        instancia.lista.add(new Contacto("Luis Felipe Piedra Walsh","+50689807793","Quality Assurance Recruiter"));
+        instancia.lista.add(new Contacto("Carlos Obando Avendano", "+50687106583", "Project Manager Recruiter"));
+        instancia.lista.add(new Contacto("Wesly Segura Monge", "+50684438388", "Front-End Development Recruiter"));
+        instancia.lista.add(new Contacto("Juan Carlos Madrigal Vasquez", "+50683280550", "DataBase Manager Recruiter"));
     }
 
     public static Contenedor getInstance(){

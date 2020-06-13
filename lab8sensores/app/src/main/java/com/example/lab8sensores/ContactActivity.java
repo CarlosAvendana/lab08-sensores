@@ -24,7 +24,7 @@ import com.example.lab8sensores.data.Contacto;
 public class ContactActivity extends AppCompatActivity {
 
     ImageView photo;
-    ImageButton callBtn, smsBtn, cameraBtn, volverBtn,sendBtn;
+    ImageButton callBtn, smsBtn, volverBtn,sendBtn;
     EditText phone, name,message;
     private static final int Image_Capture_Code = 1;
     private boolean editable = true;
@@ -40,7 +40,6 @@ public class ContactActivity extends AppCompatActivity {
 
         callBtn = (ImageButton) findViewById(R.id.callBtn);
         smsBtn = (ImageButton) findViewById(R.id.smsBtn);
-        cameraBtn = (ImageButton) findViewById(R.id.cameraBtn);
         volverBtn = (ImageButton) findViewById(R.id.volverBtn);
         sendBtn = (ImageButton) findViewById(R.id.sendBtn);
 
@@ -48,14 +47,6 @@ public class ContactActivity extends AppCompatActivity {
         name = (EditText) findViewById(R.id.nameText);
         message = (EditText) findViewById(R.id.messageContent);
 
-
-        cameraBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent cInt = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(cInt, Image_Capture_Code);
-            }
-        });
 
         smsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,16 +89,12 @@ public class ContactActivity extends AppCompatActivity {
                 Contacto aux = (Contacto) getIntent().getSerializableExtra("contacto");
                 phone.setText(aux.getNumber());
                 name.setText(aux.getNombre());
-                if(aux.getImage()!=null)
-                    photo.setImageBitmap(aux.getImage());
-
                 volverBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         editContact();
                     }
                 });
-
             }else{
                 volverBtn.setOnClickListener(new View.OnClickListener() {
                     @Override

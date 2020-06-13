@@ -9,18 +9,17 @@ import java.io.Serializable;
 public class Contacto implements Serializable {
     String nombre;
     String number;
-    Bitmap image;
+    String rol;
 
-    public Contacto(String nombre, String number, Bitmap image) {
+    public Contacto(String nombre, String number, String rol) {
         this.nombre = nombre;
         this.number = number;
-        this.image = image;
+        this.rol = rol;
     }
 
     public Contacto(String nombre, String number) {
         this.nombre = nombre;
         this.number = number;
-        this.image=null;
     }
 
     public String getNombre() {
@@ -39,12 +38,12 @@ public class Contacto implements Serializable {
         this.number = number;
     }
 
-    public Bitmap getImage() {
-        return image;
+    public String getRol() {
+        return rol;
     }
 
-    public void setImage(Bitmap image) {
-        this.image = image;
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 
     @Override
@@ -52,6 +51,7 @@ public class Contacto implements Serializable {
         return "Contacto{" +
                 "nombre='" + nombre + '\'' +
                 ", number='" + number + '\'' +
+                ", rol='" + rol + '\'' +
                 '}';
     }
 

@@ -135,7 +135,6 @@ public class MainActivity extends AppCompatActivity
                     for (Contacto carrera : estudianteList) {
                         if (carrera.getNombre().equals(aux.getNombre())) {
                             carrera.setNumber(aux.getNumber());
-                            carrera.setImage(aux.getImage());
                             founded = true;
                             break;
                         }

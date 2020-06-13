@@ -17,8 +17,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="13dp"
         android:layout_marginTop="65dp"
-        android:background="@android:color/black"
-        app:srcCompat="@drawable/ic_user" />
+        android:background="@android:color/transparent"
+        app:srcCompat="@drawable/ic_brands_and_logotypes" />
 
     <LinearLayout
         android:layout_width="356dp"
@@ -93,19 +93,6 @@
 
     </LinearLayout>
 
-
-    <ImageButton
-        android:id="@+id/cameraBtn"
-        android:layout_width="65dp"
-        android:layout_height="40dp"
-        android:layout_alignStart="@+id/photo"
-        android:layout_alignTop="@+id/photo"
-        android:layout_alignBottom="@+id/photo"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="222dp"
-        android:layout_marginBottom="23dp"
-        android:background="@android:color/white"
-        app:srcCompat="@drawable/ic_camera" />
 
     <ImageButton
         android:id="@+id/volverBtn"

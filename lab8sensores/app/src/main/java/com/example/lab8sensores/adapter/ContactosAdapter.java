@@ -34,6 +34,7 @@ public class ContactosAdapter extends RecyclerView.Adapter<ContactosAdapter.MyVi
             super(view);
             title1 = view.findViewById(R.id.titleFirstLbl);
             title2 = view.findViewById(R.id.titleSecLbl);
+            description = view.findViewById(R.id.descriptionLbl);
             viewBackgroundDelete = view.findViewById(R.id.view_background_delete);
             viewBackgroundEdit = view.findViewById(R.id.view_background_edit);
             viewForeground = view.findViewById(R.id.view_foreground);
@@ -68,6 +69,7 @@ public class ContactosAdapter extends RecyclerView.Adapter<ContactosAdapter.MyVi
         final Contacto contacto = contactoListFiltered.get(position);
         holder.title1.setText(contacto.getNombre());
         holder.title2.setText(contacto.getNumber());
+        holder.description.setText(contacto.getRol());
     }
 
     @Override
@@ -149,7 +151,6 @@ public class ContactosAdapter extends RecyclerView.Adapter<ContactosAdapter.MyVi
                             filteredList.add(row);
                         }
                     }
-
 
                     contactoListFiltered = filteredList;
                 }
