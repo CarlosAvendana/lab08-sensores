@@ -73,7 +73,7 @@
             android:ellipsize="end"
             android:fontFamily="sans-serif-medium"
             android:maxLines="1"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorPrimary"
             android:textSize="17dp" />
 
         <TextView
@@ -85,7 +85,7 @@
             android:ellipsize="end"
             android:fontFamily="sans-serif-medium"
             android:maxLines="1"
-            android:textColor="@android:color/holo_blue_light"
+            android:textColor="@color/primary_light"
             android:textSize="17dp" />
 
         <TextView
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/titleFirstLbl"
             android:layout_marginTop="5dp"
-            android:textColor="@android:color/holo_green_light"
+            android:textColor="@color/colorAccent"
             android:textSize="12dp" />
 
     </RelativeLayout>
