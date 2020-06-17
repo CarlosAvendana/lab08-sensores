@@ -69,6 +69,7 @@ public class ContactActivity extends AppCompatActivity {
                     Toast.makeText(ContactActivity.this, "SMS Sent Successfully", Toast.LENGTH_SHORT).show();
                     message.setVisibility(View.INVISIBLE);
                     sendBtn.setVisibility(View.INVISIBLE);
+                    message.setText("");
                 }
                 catch (Exception e){
                     Toast.makeText(ContactActivity.this, "SMS Failed to Send, Please try again", Toast.LENGTH_SHORT).show();

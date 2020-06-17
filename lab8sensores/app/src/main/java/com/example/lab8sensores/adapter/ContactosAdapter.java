@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -29,7 +30,7 @@ public class ContactosAdapter extends RecyclerView.Adapter<ContactosAdapter.MyVi
         public TextView title1, title2, description;
         //two layers
         public RelativeLayout viewForeground, viewBackgroundDelete, viewBackgroundEdit;
-
+        public ImageView icono;
         public MyViewHolder(View view) {
             super(view);
             title1 = view.findViewById(R.id.titleFirstLbl);
@@ -38,6 +39,8 @@ public class ContactosAdapter extends RecyclerView.Adapter<ContactosAdapter.MyVi
             viewBackgroundDelete = view.findViewById(R.id.view_background_delete);
             viewBackgroundEdit = view.findViewById(R.id.view_background_edit);
             viewForeground = view.findViewById(R.id.view_foreground);
+            icono= viewBackgroundEdit.findViewById(R.id.edit_icon);
+            icono.setImageResource(R.drawable.ic_edit);
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
